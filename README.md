@@ -65,7 +65,17 @@ CC/
 │   ├── database/           # SQLite schema and FTS5 search
 │   └── run_memento.py      # Local CLI and dashboard server
 ├── video-scripts/          # Production reel scripts with timed visual breakdowns
+│   ├── idea_reel_script.md # Project idea & kickoff reel (~42s)
+│   ├── script_5h.md        # 5-hour architecture reel
+│   ├── script_15h.md       # 15-hour hardware & KiCad reel
+│   ├── script_35h.md       # 35-hour local AI intelligence reel
+│   └── final_showcase_script.md # Final product walkthrough
 ├── Videos/                 # Generated video assets, voiceovers, and subtitles
+│   ├── memento_idea_reel.mp4
+│   ├── memento_5h_progress_reel.mp4
+│   ├── memento_15h_progress_reel.mp4
+│   ├── memento_35h_progress_reel.mp4
+│   └── memento_final_showcase_reel.mp4
 └── scripts/
     └── journal.py          # Devlog verification and image link checker
 ```
