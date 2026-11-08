@@ -1,0 +1,22 @@
+Designator,Quantity,Part / Specification,Package / Footprint,Manufacturer / Part No.,LCSC / Supplier Part,Estimated Unit Cost (USD),Subtotal (USD)
+U1,1,ESP32-S3-WROOM-1-N8R8 (8MB Flash 8MB PSRAM),SMD Module,Espressif ESP32-S3-WROOM-1-N8R8,C2913204,$4.80,$4.80
+MIC1,1,INMP441 Omnidirectional I2S MEMS Microphone,SMD MEMS / Header,InvenSense INMP441,C968598,$2.50,$2.50
+J1,1,MicroSD Push-Push Socket (SPI / SDMMC 3.3V),SMD-8,Amphenol 10100306-011LF,C2999335,$1.50,$1.50
+CARD1,1,SanDisk Ultra 32GB High Endurance MicroSD Card,MicroSD Form Factor,SanDisk SDSQUNR-032G,Retail / Amazon,$4.90,$4.90
+DISP1,1,0.96" I2C OLED Display 128x64 White (SSD1306),4-Pin Header 2.54mm,Solomon Systech SSD1306,C2937512,$2.80,$2.80
+U2,1,TP4056 1A Standalone Linear Li-Ion Battery Charger,SOP-8-EP,Top Power ASIC TP4056,C16581,$0.35,$0.35
+U3,1,ME6211C33M5G 3.3V 500mA Ultra-Low-Noise LDO,SOT-23-5,MicrOne ME6211C33M5G,C82942,$0.25,$0.25
+BAT1,1,1200mAh 3.7V LiPo Rechargeable Cell with Protection,JST-PH-2.0,PKCELL LP603450 / Generic,Adafruit / Amazon,$6.50,$6.50
+J2,1,USB Type-C 16-Pin Receptacle (USB 2.0),SMD-16,Korean Hroparts TYPE-C-31-M-12,C165948,$0.45,$0.45
+M1,1,Miniature ERM Coin Vibration Motor (10mm x 2.7mm),SMD / Wire Leads,Vybronics VPM1027,C2903276,$1.20,$1.20
+Q1,1,AO3400A N-Channel MOSFET 30V 5.7A (Haptic Driver),SOT-23,Alpha & Omega AO3400A,C20917,$0.10,$0.10
+SW1,1,SPDT Ultra-Miniature Slide Switch (Hardware Mute),SMD-3,C&K / Generic JS102011SAQN,C372951,$0.40,$0.40
+SW2-3,2,Tactile Pushbuttons 3x4x2mm (Record & Bookmark),SMD-2,Panasonic EVQ-P2B02B,C318884,$0.30,$0.60
+LED1,1,Bicolor Red/Green 0805 Surface Mount LED (Rec/Sync),0805 SMD,Everlight 19-217/R6G6C-AL1M2VY/3T,C141753,$0.18,$0.18
+D1,1,USBLC6-2SC6 Dual TVS Diode ESD Protection,SOT-23-6,STMicroelectronics USBLC6-2SC6,C7519,$0.22,$0.22
+R1-R12,12,Standard SMT Resistors 0805 (5.1k CC pull-down 10k I2C 1k LED),0805 SMD,Uniroyal / Yageo Generic,JLCPCB Basic,$0.02,$0.24
+C1-C10,10,Decoupling Ceramic Capacitors 0805 (10uF 1uF 100nF),0805 SMD,Samsung Electro-Mechanics,JLCPCB Basic,$0.03,$0.30
+PCB,5,Custom 2-Layer 75mm x 42mm FR4 Matte Black PCB,75x42mm FR4 1.6mm,JLCPCB Standard (5 pcs batch),JLCPCB,$4.00,$4.00
+CASE,1,3D Printed PETG Ergonomic Enclosure & Clip,FDM / PETG 30g,In-house Bambu Lab PETG,Raw Material,$1.80,$1.80
+SCREWS,4,M2.5 x 6mm Stainless Steel Torx Machine Screws,M2.5 Fasteners,McMaster-Carr / Generic,Hardware Bin,$0.60,$0.60
+,,,,,,Total Estimated BOM,$32.19

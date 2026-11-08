@@ -1,39 +1,71 @@
-# CC (Conversation Companion)
+# MEMENTO (CC)
 
-A wearable AI audio companion and vocal coach that records daily conversations to local storage, syncs with a laptop dashboard to generate structured daily summaries, and uses speech emotion recognition to evaluate interview confidence, mistakes, and conversational tone.
-
----
-
-## Overview
-
-Most note-taking and voice-recording apps are passive: you record hours of audio, and it ends up sitting in an archive unlistened to, or converted into a flat block of text that strips away 80% of human communication (tone, hesitation, enthusiasm, and tension).
-
-**CC** is an open-source, privacy-focused wearable audio companion designed to act as your personal conversational coach and daily executive debrief:
-- **Wearable All-Day Recording**: Compact clip-on / magnetic pendant powered by an ESP32-S3 and high-SNR I2S digital MEMS microphone recording cleanly to local MicroSD storage.
-- **Privacy First**: Dedicated physical hardware mute toggle and on-device recording indicator.
-- **Automatic Laptop Sync**: Syncs audio when in range of your local Wi-Fi or over USB-C.
-- **Speech Emotion & Tone Recognition**: Acoustic emotion classification (pitch variance, hesitation, sentiment) to evaluate confidence vs. nervousness during interviews or meetings.
-- **Daily Executive Digest & Coaching**: Generates chronological conversation timelines, key commitments/action items, and personalized feedback on interview performance.
+An intelligent personal memory and conversation analysis device built for Hack Club's Half Life. MEMENTO captures authorized real-world conversations on a dedicated, portable hardware recorder, preserves them to local microSD storage, and syncs with a local macOS companion app for on-device transcription, speaker diarization, vocal tone analysis, and daily executive summaries.
 
 ---
 
-## Hardware Architecture
+## What is this?
 
-| Component | Part / Spec | Role |
+Most voice recorders and note-taking apps on the market are completely passive: they record hours of audio into a dead folder of giant audio files that you never listen to again, or dump them into a third-party cloud that turns spoken human nuance into flat, robotic text blocks.
+
+**MEMENTO** is a personal memory infrastructure. It combines a dedicated hardware pendant recorder with a local-first desktop intelligence pipeline:
+
+1. **Hardware Capture Unit (MEMENTO ONE)**: A featherweight 75mm × 42mm × 15mm clip-on device powered by an ESP32-S3 and high-SNR INMP441 I2S digital MEMS microphone. It records uncompressed 16kHz 16-bit PCM audio directly to a 32GB microSD card with a hardware mute switch, 0.96" OLED status screen, and silent haptic motor.
+2. **Local AI Desktop Engine (Mac)**: Ingests audio sessions over USB-C or local Wi-Fi, performs word-level timestamped transcription (`whisper.cpp` / `faster-whisper`), segments speakers (`pyannote.audio`), extracts acoustic features (`librosa` vocal pitch, jitter, pauses), and prompts a local LLM (`ollama`) to produce structured conversation reports.
+3. **Interview & Vocal Coaching**: Evaluates conversation dynamics—detecting hesitation, questions missed or evaded, commitments made, listener engagement, and acoustic vocal intensity.
+4. **Searchable Daily Memory**: Chronological timeline of your day backed by a local SQLite database with FTS5 full-text search and provenance linking every observation directly to its source audio timestamp.
+
+---
+
+## Hardware Specifications
+
+| Subsystem | Component | Specifications |
 | :--- | :--- | :--- |
-| **MCU** | ESP32-S3 (Dual-Core 240MHz, 8MB PSRAM) | I2S audio sampling, SD card logging, Wi-Fi sync |
-| **Microphone** | High-SNR I2S Digital MEMS Microphone (ICS-43434 / INMP441) | High-fidelity 16kHz speech capture |
-| **Storage** | MicroSD Card Module (SPI / SDMMC) | 24+ hours of lossless audio storage |
-| **Haptics & Alerts** | Miniature ERM Vibration Motor + RGB LED | Silent tactile alerts and status indication |
-| **Privacy & Control** | Physical slide mute switch + record button | Hardware-level audio cutoff and manual triggers |
-| **Power System** | 500mAh LiPo Battery + USB-C TP4056 / MCP73831 Charger | 10–14+ hours continuous battery life |
+| **Microcontroller** | ESP32-S3-WROOM-1 | Dual-core Tensilica Xtensa LX7 @ 240MHz, 8MB PSRAM, 8MB Flash |
+| **Microphone** | InvenSense INMP441 | I2S digital MEMS, 61 dBA SNR, 24-bit PCM acquisition |
+| **Storage** | MicroSD Slot | SPI / SDMMC bus, FAT32 filesystem, 32GB high-endurance card |
+| **Display** | 0.96" I2C OLED (SSD1306) | 128×64 resolution, auto-dimming status and battery telemetry |
+| **Haptics** | 1027 ERM Coin Motor | AO3400A MOSFET driver for silent tactile notifications |
+| **Power & Battery** | 1200mAh 3.7V LiPo | TP4056 linear charger, ME6211 3.3V ultra-low-noise LDO, USB-C |
+| **Controls** | Hardware Switches | Physical slide mute switch, tactile record button, bookmark button |
+| **Dimensions** | 75mm × 42mm × 15mm | 3D-printed PETG enclosure with spring clip and acoustic funnel |
 
 ---
 
-## Software & AI Pipeline
+## Repository Structure
 
-1. **Audio Ingestion & Preprocessing**: Automatic sync of `.wav` audio sessions to the local laptop.
-2. **Speaker Diarization**: Multi-speaker segmentation (`pyannote-audio`) separating your voice from conversational partners.
-3. **High-Accuracy Transcription**: Word-level timestamped transcription using `faster-whisper`.
-4. **Speech Emotion Recognition (SER)**: Acoustic feature analysis (`wav2vec2-emotion`) tracking vocal intensity, confidence, hesitation, and emotional sentiment.
-5. **LLM Coaching & Daily Digest**: Structured prompts synthesizing conversations into mistakes spotted, listener engagement, commitments made, and daily summaries.
+```
+CC/
+├── README.md               # Engineering specification and project reference
+├── JOURNAL.md              # Mirrored devlog formatted for Half Life sync
+├── BOM.csv                 # Detailed Bill of Materials ($33 hardware subtotal)
+├── SHOPPING_LIST.md        # Procurement links and component allowances
+├── journal/                # Conversational devlog entries
+│   ├── initial.md          # First 10 hours: Architecture, I2S mic & power tree
+│   ├── next_15_hours.md    # Hours 11-25: KiCad schematic, PCB layout & CAD
+│   ├── hours_25_to_35.md   # Hours 25-35: Desktop intelligence & interview coach
+│   └── images/             # 1200x800 engineering sketches and diagrams
+├── kicad/                  # Complete KiCad 10 hardware project
+│   ├── memento.kicad_pro   # KiCad project file
+│   ├── memento.kicad_sch   # Full multi-sheet schematic
+│   ├── memento.kicad_pcb   # 2-layer routed PCB with isolated audio zone
+│   ├── memento_schematic.pdf
+│   ├── memento_gerbers.zip # JLCPCB production files
+│   └── renders/            # 3D PCB raytraced renders
+├── cad/                    # 3D CAD models
+│   ├── 01_front_housing.scad
+│   ├── 02_rear_clip_housing.scad
+│   ├── 03_button_actuators.scad
+│   └── memento_assembly.scad
+├── firmware/               # ESP-IDF FreeRTOS C++ firmware
+│   ├── main/               # Main application and task orchestration
+│   └── components/         # Modular drivers (audio, storage, display, power)
+├── desktop/                # Local macOS AI intelligence pipeline
+│   ├── pipeline/           # Ingestion, Whisper transcription, PyAnnote, Librosa
+│   ├── database/           # SQLite schema and FTS5 search
+│   └── run_memento.py      # Local CLI and dashboard server
+├── video-scripts/          # Production reel scripts with timed visual breakdowns
+├── Videos/                 # Generated video assets, voiceovers, and subtitles
+└── scripts/
+    └── journal.py          # Devlog verification and image link checker
+```

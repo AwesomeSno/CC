@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MEMENTO // Conversation Debrief & Interview Coach</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0d1117; color: #c9d1d9; margin: 0; padding: 30px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { border-bottom: 2px solid #30363d; padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { color: #f0f6fc; margin: 0 0 10px 0; }
+        .badge { display: inline-block; padding: 4px 10px; background: #21262d; border: 1px solid #30363d; color: #58a6ff; border-radius: 6px; font-size: 13px; font-weight: bold; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .card-title { color: #58a6ff; font-size: 18px; margin-top: 0; margin-bottom: 15px; }
+        .timeline-item { padding: 12px 15px; border-left: 3px solid #3fb950; background: #0d1117; margin-bottom: 12px; border-radius: 0 6px 6px 0; }
+        .speaker { font-weight: bold; color: #f0f6fc; }
+        .time { font-size: 12px; color: #8b949e; margin-left: 10px; }
+        .mistake { border-left-color: #f85149; background: rgba(248, 81, 73, 0.08); }
+        .hesitation { border-left-color: #d29922; background: rgba(210, 153, 34, 0.08); }
+        .tag-critique { color: #f85149; font-size: 13px; margin-top: 5px; font-weight: 500; }
+        .tag-strength { color: #3fb950; font-size: 13px; margin-top: 5px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+        .metric-box { background: #21262d; padding: 15px; border-radius: 6px; text-align: center; }
+        .metric-val { font-size: 24px; font-weight: bold; color: #3fb950; }
+        .metric-lbl { font-size: 13px; color: #8b949e; margin-top: 5px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <span class="badge">MEMENTO // EXECUTIVE DEBRIEF</span>
+        <h1>Technical Systems Interview Analysis</h1>
+        <div style="color: #8b949e; font-size: 14px;">Recorded on MEMENTO ONE · Duration: 01:15 · 100% Local Processing</div>
+    </div>
+
+    <div class="metric-grid">
+        <div class="metric-box">
+            <div class="metric-val">48% / 52%</div>
+            <div class="metric-lbl">Speaking Ratio (You / Alex)</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-val">2.9s</div>
+            <div class="metric-lbl">Max Hesitation Gap</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-val">1 Pending</div>
+            <div class="metric-lbl">Extracted Commitments</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Key Commitments & Action Items</div>
+        <div style="color: #f0f6fc; font-weight: 500;">• Send KiCad schematics & GitHub repo link to Alex by 5:00 PM tomorrow.</div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Timestamped Dialogue & Coaching Feedback</div>
+
+        <div class="timeline-item">
+            <span class="speaker">Alex (Interviewer)</span>
+            <span class="time">[0.0s - 4.5s]</span>
+            <div style="margin-top: 5px;">"Thanks for joining today! To start off, can you tell me about the architecture of your recent hardware project?"</div>
+        </div>
+        <div class="timeline-item">
+            <span class="speaker">Harinandan (You)</span>
+            <span class="time">[5.2s - 18.0s]</span>
+            <div style="margin-top: 5px;">"Yeah, absolutely! For Hux, I designed a 72mm PCB around the ESP32-S3. It uses an ST7789 IPS LCD for animated robot eyes and an INMP441 I2S microphone for voice commands over local Home Assistant."</div>
+        </div>
+        <div class="timeline-item">
+            <span class="speaker">Alex (Interviewer)</span>
+            <span class="time">[18.8s - 26.2s]</span>
+            <div style="margin-top: 5px;">"That sounds solid. How did you handle the acoustic noise from the Wi-Fi transmission bursts when recording voice?"</div>
+        </div>
+        <div class="timeline-item mistake">
+            <span class="speaker">Harinandan (You)</span>
+            <span class="time">[29.1s - 42.5s]</span>
+            <div style="margin-top: 5px;">"Um, so basically... we kind of just separated the traces, you know? And we made sure the power was good."</div>
+        <div class="tag-critique">⚠ Communication Coach: Answer dodged the technical specifics and used filler words ('um', 'you know'). Interviewer had to ask for clarification.</div></div>
+        <div class="timeline-item">
+            <span class="speaker">Alex (Interviewer)</span>
+            <span class="time">[43.1s - 50.0s]</span>
+            <div style="margin-top: 5px;">"Did you implement an isolated star ground or an LC filter on the microphone VDD rail?"</div>
+        </div>
+        <div class="timeline-item strength">
+            <span class="speaker">Harinandan (You)</span>
+            <span class="time">[50.5s - 64.0s]</span>
+            <div style="margin-top: 5px;">"Yes, on the second revision we carved out a dedicated AGND ground island with a 10uF ceramic cap and ferrite bead, which eliminated the 217Hz GSM buzz completely."</div>
+        <div class="tag-strength">✔ Communication Coach: Strong recovery. Clearly articulated concrete decoupling components (10uF, ferrite bead, AGND) and exact noise metric (217Hz).</div></div>
+        <div class="timeline-item">
+            <span class="speaker">Alex (Interviewer)</span>
+            <span class="time">[64.5s - 71.0s]</span>
+            <div style="margin-top: 5px;">"Awesome. Could you send over your KiCad schematics and the GitHub repo by tomorrow evening?"</div>
+        </div>
+        <div class="timeline-item">
+            <span class="speaker">Harinandan (You)</span>
+            <span class="time">[71.4s - 75.0s]</span>
+            <div style="margin-top: 5px;">"Definitely, I'll push the latest commit and send you the link by 5 PM tomorrow."</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

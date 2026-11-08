@@ -1,0 +1,715 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "d9b4f6f5-0996-474c-b18d-a165a27c3ee1")
+	(paper "A3")
+	(title_block
+		(title "MEMENTO: Intelligent Wearable Audio Companion")
+		(date "2026-11-08")
+		(rev "v1.0")
+		(company "Hack Club Half Life")
+		(comment 1 "ESP32-S3 + INMP441 I2S Mic + MicroSD + OLED + Hardware Mute")
+		(comment 2 "Open Source Hardware (OSHW) - Harinandan J V")
+	)
+	(lib_symbols
+		(symbol "MEMENTO:ESP32-S3-WROOM-1"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U" (at 0 33.02 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "ESP32-S3-WROOM-1" (at 0 -33.02 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Description" "ESP32-S3-WROOM-1" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(symbol "ESP32-S3-WROOM-1_0_1"
+				(rectangle (start -12.7 30.48) (end 12.7 -30.48) (stroke (width 0.254)) (fill (type background)))
+			)
+			(symbol "ESP32-S3-WROOM-1_1_1"
+				(pin power_in line (at -15.24 25.4 0) (length 2.54) (name "3V3" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+				(pin power_in line (at -15.24 -25.4 0) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -15.24 20.32 0) (length 2.54) (name "EN" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -15.24 15.24 0) (length 2.54) (name "IO0" (effects (font (size 1.27 1.27)))) (number "27" (effects (font (size 1.27 1.27)))))
+				(pin bidirectional line (at -15.24 5.08 0) (length 2.54) (name "IO19_DN" (effects (font (size 1.27 1.27)))) (number "13" (effects (font (size 1.27 1.27)))))
+				(pin bidirectional line (at -15.24 0 0) (length 2.54) (name "IO20_DP" (effects (font (size 1.27 1.27)))) (number "14" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -15.24 -7.62 0) (length 2.54) (name "IO17_MIC_SD" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+				(pin output line (at -15.24 -12.7 0) (length 2.54) (name "IO16_MIC_WS" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+				(pin output line (at -15.24 -17.78 0) (length 2.54) (name "IO15_MIC_SCK" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 15.24 25.4 180) (length 2.54) (name "IO12_SD_SCK" (effects (font (size 1.27 1.27)))) (number "20" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 15.24 20.32 180) (length 2.54) (name "IO11_SD_MOSI" (effects (font (size 1.27 1.27)))) (number "19" (effects (font (size 1.27 1.27)))))
+				(pin input line (at 15.24 15.24 180) (length 2.54) (name "IO13_SD_MISO" (effects (font (size 1.27 1.27)))) (number "18" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 15.24 10.16 180) (length 2.54) (name "IO10_SD_CS" (effects (font (size 1.27 1.27)))) (number "17" (effects (font (size 1.27 1.27)))))
+				(pin bidirectional line (at 15.24 0 180) (length 2.54) (name "IO4_I2C_SDA" (effects (font (size 1.27 1.27)))) (number "23" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 15.24 -5.08 180) (length 2.54) (name "IO5_I2C_SCL" (effects (font (size 1.27 1.27)))) (number "24" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 15.24 -15.24 180) (length 2.54) (name "IO6_HAPTIC" (effects (font (size 1.27 1.27)))) (number "25" (effects (font (size 1.27 1.27)))))
+				(pin input line (at 15.24 -20.32 180) (length 2.54) (name "IO7_BTN_REC" (effects (font (size 1.27 1.27)))) (number "26" (effects (font (size 1.27 1.27)))))
+				(pin input line (at 15.24 -25.4 180) (length 2.54) (name "IO8_BTN_MARK" (effects (font (size 1.27 1.27)))) (number "28" (effects (font (size 1.27 1.27)))))
+			)
+		)
+		(symbol "MEMENTO:USB_C_16P"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J" (at 0 12.7 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "USB-C-16P" (at 0 -12.7 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Description" "USB-C-16P" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(symbol "USB_C_16P_0_1"
+				(rectangle (start -7.62 10.16) (end 7.62 -10.16) (stroke (width 0.254)) (fill (type background)))
+			)
+			(symbol "USB_C_16P_1_1"
+				(pin power_out line (at 10.16 7.62 180) (length 2.54) (name "VBUS" (effects (font (size 1.27 1.27)))) (number "A4_B9" (effects (font (size 1.27 1.27)))))
+				(pin power_out line (at 10.16 -7.62 180) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "A1_B12" (effects (font (size 1.27 1.27)))))
+				(pin bidirectional line (at 10.16 2.54 180) (length 2.54) (name "DP" (effects (font (size 1.27 1.27)))) (number "A6_B6" (effects (font (size 1.27 1.27)))))
+				(pin bidirectional line (at 10.16 -2.54 180) (length 2.54) (name "DN" (effects (font (size 1.27 1.27)))) (number "A7_B7" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -10.16 2.54 0) (length 2.54) (name "CC1" (effects (font (size 1.27 1.27)))) (number "A5" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -10.16 -2.54 0) (length 2.54) (name "CC2" (effects (font (size 1.27 1.27)))) (number "B5" (effects (font (size 1.27 1.27)))))
+			)
+		)
+		(symbol "MEMENTO:TP4056"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U" (at 0 12.7 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "TP4056" (at 0 -12.7 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Description" "TP4056" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(symbol "TP4056_0_1"
+				(rectangle (start -7.62 10.16) (end 7.62 -10.16) (stroke (width 0.254)) (fill (type background)))
+			)
+			(symbol "TP4056_1_1"
+				(pin input line (at -10.16 7.62 0) (length 2.54) (name "TEMP" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -10.16 2.54 0) (length 2.54) (name "PROG" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+				(pin power_in line (at -10.16 -2.54 0) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+				(pin power_in line (at -10.16 -7.62 0) (length 2.54) (name "VCC" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+				(pin power_out line (at 10.16 -7.62 180) (length 2.54) (name "BAT" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 10.16 -2.54 180) (length 2.54) (name "STDBY" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 10.16 2.54 180) (length 2.54) (name "CHRG" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27)))))
+				(pin input line (at 10.16 7.62 180) (length 2.54) (name "CE" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))
+			)
+		)
+		(symbol "MEMENTO:ME6211"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U" (at 0 8.89 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "ME6211C33M5G" (at 0 -8.89 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Description" "ME6211C33M5G" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(symbol "ME6211_0_1"
+				(rectangle (start -7.62 6.35) (end 7.62 -6.35) (stroke (width 0.254)) (fill (type background)))
+			)
+			(symbol "ME6211_1_1"
+				(pin power_in line (at -10.16 2.54 0) (length 2.54) (name "VIN" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+				(pin power_in line (at 0 -7.62 90) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -10.16 -2.54 0) (length 2.54) (name "EN" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+				(pin power_out line (at 10.16 2.54 180) (length 2.54) (name "VOUT" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+			)
+		)
+		(symbol "MEMENTO:INMP441"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "MIC" (at 0 11.43 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "INMP441" (at 0 -11.43 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Description" "INMP441" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(symbol "INMP441_0_1"
+				(rectangle (start -7.62 8.89) (end 7.62 -8.89) (stroke (width 0.254)) (fill (type background)))
+			)
+			(symbol "INMP441_1_1"
+				(pin power_in line (at -10.16 6.35 0) (length 2.54) (name "VDD" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+				(pin power_in line (at -10.16 -6.35 0) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 10.16 3.81 180) (length 2.54) (name "SD" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -10.16 1.27 0) (length 2.54) (name "WS" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -10.16 -1.27 0) (length 2.54) (name "SCK" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -10.16 -3.81 0) (length 2.54) (name "L/R" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+			)
+		)
+		(symbol "MEMENTO:MicroSD_Socket"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J" (at 0 15.239999999999998 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "MicroSD_Socket" (at 0 -15.239999999999998 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Description" "MicroSD_Socket" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(symbol "MicroSD_Socket_0_1"
+				(rectangle (start -7.62 12.7) (end 7.62 -12.7) (stroke (width 0.254)) (fill (type background)))
+			)
+			(symbol "MicroSD_Socket_1_1"
+				(pin output line (at 10.16 7.62 180) (length 2.54) (name "DAT2" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+				(pin input line (at 10.16 5.08 180) (length 2.54) (name "CD/DAT3" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+				(pin input line (at 10.16 2.54 180) (length 2.54) (name "CMD" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+				(pin power_in line (at 10.16 0 180) (length 2.54) (name "VDD" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+				(pin input line (at 10.16 -2.54 180) (length 2.54) (name "CLK" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+				(pin power_in line (at 10.16 -5.08 180) (length 2.54) (name "VSS" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 10.16 -7.62 180) (length 2.54) (name "DAT0" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27)))))
+				(pin output line (at 10.16 -10.16 180) (length 2.54) (name "DAT1" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))
+			)
+		)
+		(symbol "MEMENTO:OLED_0.96"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "DISP" (at 0 8.89 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "SSD1306_I2C" (at 0 -8.89 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(property "Description" "SSD1306_I2C" (at 0 0 0) (effects (font (size 1.27 1.27))) (hide yes))
+			(symbol "OLED_0.96_0_1"
+				(rectangle (start -7.62 6.35) (end 7.62 -6.35) (stroke (width 0.254)) (fill (type background)))
+			)
+			(symbol "OLED_0.96_1_1"
+				(pin power_in line (at -10.16 3.81 0) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+				(pin power_in line (at -10.16 1.27 0) (length 2.54) (name "VCC" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+				(pin input line (at -10.16 -1.27 0) (length 2.54) (name "SCL" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+				(pin bidirectional line (at -10.16 -3.81 0) (length 2.54) (name "SDA" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+			)
+		)
+
+	)
+
+	(symbol
+		(lib_id "MEMENTO:ESP32-S3-WROOM-1")
+		(at 170 110 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d2677e20-aa10-4b72-88a2-b0762b929e0f")
+		(property "Reference" "U1"
+			(at 170 98 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "ESP32-S3-WROOM-1-N8R8"
+			(at 170 122 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "RF_Module:ESP32-S3-WROOM-1"
+			(at 170 110 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 170 110 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Description" "ESP32-S3-WROOM-1-N8R8"
+			(at 170 110 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(pin "1"
+			(uuid "1a43563b-b2b3-4c06-a20a-3d4a94643fff")
+		)
+		(pin "2"
+			(uuid "7b607037-ced9-430e-b82e-47b7f9e681b2")
+		)
+		(pin "3"
+			(uuid "2599bbd1-6cef-43f2-b3bb-a023f341ceef")
+		)
+		(pin "4"
+			(uuid "214e1372-5f0e-4d07-8dcb-980335f41977")
+		)
+		(pin "5"
+			(uuid "d1140a85-1653-432c-8040-17d076706fe4")
+		)
+		(pin "6"
+			(uuid "6adff47e-0e0b-47d9-abb1-25df49e0eaef")
+		)
+		(pin "13"
+			(uuid "c0b2aa5f-6de1-4d74-8ae1-d876b4725c04")
+		)
+		(pin "14"
+			(uuid "e179da75-33a5-41c0-bc0b-6cc6c468c192")
+		)
+		(pin "17"
+			(uuid "efb78518-45e3-42de-a8bf-7457dd730ba3")
+		)
+		(pin "18"
+			(uuid "98a8273f-b38b-4e8f-809e-913b9d724a23")
+		)
+		(pin "19"
+			(uuid "9bc539bc-59e9-4af1-9a43-028a261323f7")
+		)
+		(pin "20"
+			(uuid "edd5ab79-a43c-4680-b0cf-57ead08c9f5a")
+		)
+		(pin "23"
+			(uuid "ef1c8732-fa15-4047-b6fe-d9f845b1861d")
+		)
+		(pin "24"
+			(uuid "4f5f7b45-daca-45e4-aa78-a8903bfb2b28")
+		)
+		(pin "25"
+			(uuid "d4c0d595-4927-43c4-95f9-d47a84349ab8")
+		)
+		(pin "26"
+			(uuid "cfd80bc0-79d4-497b-b5a4-b445a8a4b88d")
+		)
+		(pin "27"
+			(uuid "655b0375-e662-432c-bd08-64ac563540db")
+		)
+		(pin "28"
+			(uuid "dc08c3c3-9b9a-43f2-9b59-99b547a9aa4d")
+		)
+		(instances
+			(project "memento"
+				(path "/d9b4f6f5-0996-474c-b18d-a165a27c3ee1"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MEMENTO:USB_C_16P")
+		(at 60 50 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dc347c81-0677-4508-9e36-04481fff6712")
+		(property "Reference" "J2"
+			(at 60 38 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "USB-C-16P"
+			(at 60 62 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+			(at 60 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 60 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Description" "USB-C-16P"
+			(at 60 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(pin "A1_B12"
+			(uuid "0346fd7d-7dcd-4ebb-8e8b-041e709a4151")
+		)
+		(pin "A4_B9"
+			(uuid "a026f184-495a-4064-abe5-159c73ea9f01")
+		)
+		(pin "A5"
+			(uuid "d9cc398c-58cd-4a8f-a879-3a92b9a3da2d")
+		)
+		(pin "A6_B6"
+			(uuid "bf5f02ae-cea9-4678-9b58-62f3fc1cecad")
+		)
+		(pin "A7_B7"
+			(uuid "b712e093-846c-49fd-a703-26e1288fa1ae")
+		)
+		(pin "B5"
+			(uuid "9acaf382-b889-44d8-aebf-4dd87b413d1f")
+		)
+		(instances
+			(project "memento"
+				(path "/d9b4f6f5-0996-474c-b18d-a165a27c3ee1"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MEMENTO:TP4056")
+		(at 100 50 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "29f114fc-761d-4f3c-b96a-4a6a9f67d370")
+		(property "Reference" "U2"
+			(at 100 38 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "TP4056"
+			(at 100 62 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 100 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 100 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Description" "TP4056"
+			(at 100 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(pin "1"
+			(uuid "ea3dc5ad-9c3c-42cd-9397-86ab1ca176ae")
+		)
+		(pin "2"
+			(uuid "3f03b0d9-30d9-47c5-975b-0f83c34fc3e0")
+		)
+		(pin "3"
+			(uuid "cff260b5-33e2-41da-94b4-04eefd88a4d2")
+		)
+		(pin "4"
+			(uuid "20732ffe-c318-4d3d-9676-fe23e5ae6fe6")
+		)
+		(pin "5"
+			(uuid "da456bac-4a70-4921-8b77-98522d3dc720")
+		)
+		(pin "6"
+			(uuid "6b8be155-9466-4ad4-9349-cba797a76304")
+		)
+		(pin "7"
+			(uuid "cbe0b885-05f6-4ef8-9d4b-2da10263d297")
+		)
+		(pin "8"
+			(uuid "bd3171c9-8196-4e56-8543-ebf02149c0f3")
+		)
+		(instances
+			(project "memento"
+				(path "/d9b4f6f5-0996-474c-b18d-a165a27c3ee1"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MEMENTO:ME6211")
+		(at 140 50 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "316d14b4-4637-43a4-8f18-88b4f7f5ee9c")
+		(property "Reference" "U3"
+			(at 140 38 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "ME6211C33M5G"
+			(at 140 62 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 140 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 140 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Description" "ME6211C33M5G"
+			(at 140 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(pin "1"
+			(uuid "42616c43-3a2d-4251-94dc-a906e58858cb")
+		)
+		(pin "2"
+			(uuid "3a357ef4-3e3b-49a7-9efa-8ef9667f443c")
+		)
+		(pin "3"
+			(uuid "4604e92a-64b5-4ff9-b08f-394fa5274ae4")
+		)
+		(pin "5"
+			(uuid "af9e3f70-e860-4f5e-bc95-ab2924c2cbb4")
+		)
+		(instances
+			(project "memento"
+				(path "/d9b4f6f5-0996-474c-b18d-a165a27c3ee1"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MEMENTO:INMP441")
+		(at 60 140 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e56263c7-8bf4-4ce3-ba50-59183cb4d937")
+		(property "Reference" "MIC1"
+			(at 60 128 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "INMP441"
+			(at 60 152 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Sensor_Audio:InvenSense_INMP441"
+			(at 60 140 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 60 140 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Description" "INMP441"
+			(at 60 140 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(pin "1"
+			(uuid "6bae923c-77d9-4f29-ba0c-4e1552698029")
+		)
+		(pin "2"
+			(uuid "d1aa670b-85fe-476e-a907-354bd46380ab")
+		)
+		(pin "3"
+			(uuid "6e8472db-e8f0-487d-a6c6-3427c113e632")
+		)
+		(pin "4"
+			(uuid "81e63ab9-d911-4624-a43b-672154bf2287")
+		)
+		(pin "5"
+			(uuid "f2f4fc2d-b104-43bc-85c1-97281712cf71")
+		)
+		(pin "6"
+			(uuid "c0c8f229-cd4e-43cb-92b5-84becafae2c3")
+		)
+		(instances
+			(project "memento"
+				(path "/d9b4f6f5-0996-474c-b18d-a165a27c3ee1"
+					(reference "MIC1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MEMENTO:MicroSD_Socket")
+		(at 240 110 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a7f2449-b3bf-4f14-ad7a-2e9d2950fab1")
+		(property "Reference" "J1"
+			(at 240 98 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "MicroSD_Socket"
+			(at 240 122 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5"
+			(at 240 110 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 240 110 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Description" "MicroSD_Socket"
+			(at 240 110 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(pin "1"
+			(uuid "1fe77a18-7ecd-4f43-b13b-be968a5b1a80")
+		)
+		(pin "2"
+			(uuid "e531eb3a-67be-4f37-a622-a0362df3edef")
+		)
+		(pin "3"
+			(uuid "db7eeea6-4126-48a0-a6ca-31e495e9f7e0")
+		)
+		(pin "4"
+			(uuid "5e77dc72-4a15-4567-a0de-c3233aaedc3e")
+		)
+		(pin "5"
+			(uuid "1cf59b72-2a2e-4dcd-baf9-fe21383f3218")
+		)
+		(pin "6"
+			(uuid "92e0ce43-e5a5-467c-8875-609d85900fcf")
+		)
+		(pin "7"
+			(uuid "b7b1a5ac-943b-4552-9898-d0e47f5a4913")
+		)
+		(pin "8"
+			(uuid "d3db997a-4c15-405c-a7b1-6defa4c863c3")
+		)
+		(instances
+			(project "memento"
+				(path "/d9b4f6f5-0996-474c-b18d-a165a27c3ee1"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MEMENTO:OLED_0.96")
+		(at 240 50 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "23174c20-fe4e-4dee-90f3-3ecaa064eecc")
+		(property "Reference" "DISP1"
+			(at 240 38 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "SSD1306_I2C"
+			(at 240 62 0)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
+			(at 240 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Datasheet" "~"
+			(at 240 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(property "Description" "SSD1306_I2C"
+			(at 240 50 0)
+			(effects (font (size 1.27 1.27)))
+			(hide yes)
+		)
+		(pin "1"
+			(uuid "ca1ce4af-19d7-4ec0-b724-a8d9bb25dac4")
+		)
+		(pin "2"
+			(uuid "8c71abb5-0f39-4c74-b461-fb1730978cc0")
+		)
+		(pin "3"
+			(uuid "5c844b76-e111-4c37-aca7-3d64a0168d10")
+		)
+		(pin "4"
+			(uuid "b86394d2-2c25-4de4-8a68-aed3673ac482")
+		)
+		(instances
+			(project "memento"
+				(path "/d9b4f6f5-0996-474c-b18d-a165a27c3ee1"
+					(reference "DISP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+
+	(label "VBUS_5V"
+		(at 75 42 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "4d4457fb-c842-4a4f-8c4a-70a52c5079f5")
+	)
+	(label "VBAT"
+		(at 115 57 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "6ced634c-a7e2-4f59-8f8b-2de4711e7ade")
+	)
+	(label "+3V3"
+		(at 155 47 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "84da1af2-0634-4b0e-832a-bbc4d1e5d3b2")
+	)
+	(label "MIC_SD"
+		(at 75 136 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "9f1a11e2-a6de-41de-a7dd-091fa249d1be")
+	)
+	(label "MIC_WS"
+		(at 45 138 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "8514c2f4-9a0b-4c0b-929c-4d009c89040e")
+	)
+	(label "MIC_SCK"
+		(at 45 141 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "8d5f1716-79be-43cc-8c24-9c328f6b71af")
+	)
+	(label "SD_CS"
+		(at 225 105 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "e093b28a-2395-4aef-93ff-83cb3538c7c4")
+	)
+	(label "SD_MOSI"
+		(at 225 107 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "1d414bba-da68-48bf-849e-e89ce4145a79")
+	)
+	(label "SD_SCK"
+		(at 225 112 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "c1208a02-ad8d-48fd-bbc4-fce8fcd723ed")
+	)
+	(label "SD_MISO"
+		(at 255 117 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "f863537e-c993-4b29-a784-34cf6abed032")
+	)
+	(label "I2C_SCL"
+		(at 225 51 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "a1802720-1645-4ee1-b4c1-1b086398cbce")
+	)
+	(label "I2C_SDA"
+		(at 225 53 0)
+		(fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)))
+		(uuid "c083e29c-dd11-4eb7-89f3-84a92081c001")
+	)
+
+
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
