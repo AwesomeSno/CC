@@ -9,31 +9,32 @@
 
 | Week | Tier | Hours logged | Entries |
 | --- | --- | --- | --- |
-| Week 5 | Tier 3 | 35h | 3 |
+| Week 5 | Tier 3 | 35h | 4 |
 
 ## Contents
 
-1. [2026-11-08: # MEMENTO - Devlog: First 10 Hours](#2026-11-08-memento---devlog-first-10-hours)
-2. [2026-11-08: # MEMENTO - Devlog: Hours 11 to 25](#2026-11-08-memento---devlog-hours-11-to-25)
-3. [2026-11-08: # MEMENTO - Devlog: Hours 25 to 35](#2026-11-08-memento---devlog-hours-25-to-35)
+1. [2026-11-08: # MEMENTO - Devlog: First 5 Hours](#2026-11-08-memento---devlog-first-5-hours)
+2. [2026-11-08: # MEMENTO - Devlog: Hours 5 to 10](#2026-11-08-memento---devlog-hours-5-to-10)
+3. [2026-11-08: # MEMENTO - Devlog: Hours 11 to 25](#2026-11-08-memento---devlog-hours-11-to-25)
+4. [2026-11-08: # MEMENTO - Devlog: Hours 25 to 35](#2026-11-08-memento---devlog-hours-25-to-35)
 
 ## Design
 
-### 2026-11-08: # MEMENTO - Devlog: First 10 Hours
+### 2026-11-08: # MEMENTO - Devlog: First 5 Hours
 
-**10h**
+**5h**
 
 # MEMENTO - Devlog
 
-## First 10 Hours
+## First 5 Hours
 
 I've been thinking a lot about how most note-taking apps and audio recorders work. You record a voice memo on your phone or use some smart recorder, and it just dumps a giant multi-gigabyte audio file into a folder that you never open again. Or if it does transcribe it, it sends all your private conversations to someone's cloud servers and gives you a robotic block of text that completely strips away the tone, the hesitation, and whether someone actually agreed with what you said.
 
 For Half Life, I wanted to build something I'd actually use every day: MEMENTO. It's a small wearable recorder that clips onto your shirt or sits on your desk, captures conversations locally to a microSD card, and when you plug it into your Mac, it transcribes everything completely offline, figures out who was speaking, and analyzes how the conversation went. Like if you're in an interview, it can tell you if you rambled, if you actually answered what they asked, or if you made commitments you might forget.
 
-Since this is the first 10 hours, I spent the time planning out the hardware architecture, picking the right chips, figuring out how to keep audio noise low, and making sure the entire build stays well under the 100 dollar budget limit.
+In these first 5 hours, I focused on defining the core problem, sketching out the high-level system architecture, selecting the ESP32-S3 microcontroller, mapping out the GPIO pinout budget, designing the acoustic porting for the INMP441 microphone, and working through the battery and power management tree.
 
-Here are the sketches and plans from the first 10 hours.
+Here are the sketches and plans from the first 5 hours.
 
 ---
 
@@ -74,6 +75,22 @@ If the microphone captures muffled or noisy audio, no AI model in the world can 
 For battery life, I chose a 1200mAh 3.7V LiPo cell with built-in protection. The board takes 5V over USB-C, charges through a TP4056 linear charger, and feeds an ultra-low-noise ME6211 3.3V LDO regulator. In recording mode with the OLED dimmed, current draw is around 65mA, which gives easily 14 or more hours of continuous recording.
 
 ![initial_05_power_tree_and_battery](journal/images/initial_05_power_tree_and_battery.png)
+
+---
+
+### 2026-11-08: # MEMENTO - Devlog: Hours 5 to 10
+
+**5h**
+
+# MEMENTO - Devlog
+
+## Hours 5 to 10
+
+Following the initial system architecture and component selection, the next 5 hours (hours 5 to 10) were focused on privacy controls, designing the local AI processing pipeline on macOS, fleshing out the interview coaching logic, drafting the wearable mechanical ergonomics in CAD, and verifying our bill of materials against the Half Life 100 dollar budget limit.
+
+The biggest design requirement for me is that recording has to feel completely trustworthy for everyone in the room. That meant designing a physical hardware mute switch that cuts power to the mic instead of relying on software flags. I also worked out the local inference pipeline using Faster-Whisper and PyAnnote so that no voice data ever leaves the machine.
+
+Here are the engineering plans and sketches from hours 5 to 10.
 
 ---
 

@@ -41,7 +41,8 @@ CC/
 ├── BOM.csv                 # Detailed Bill of Materials ($33 hardware subtotal)
 ├── SHOPPING_LIST.md        # Procurement links and component allowances
 ├── journal/                # Conversational devlog entries
-│   ├── initial.md          # First 10 hours: Architecture, I2S mic & power tree
+│   ├── first_5_hours.md    # First 5 hours: Architecture, I2S mic & power tree
+│   ├── hours_5_to_10.md    # Hours 5-10: Hardware privacy, local AI, CAD & BOM check
 │   ├── next_15_hours.md    # Hours 11-25: KiCad schematic, PCB layout & CAD
 │   ├── hours_25_to_35.md   # Hours 25-35: Desktop intelligence & interview coach
 │   └── images/             # 1200x800 engineering sketches and diagrams
