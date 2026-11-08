@@ -1,0 +1,62 @@
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Personal Procurement & Shopping List
+SHOPPING_LIST.md
+personal/
+*SHOPPING*
+*shopping*
+
+# Node.js, Remotion & Video Production
+node_modules/
+.remotion/
+.cache/
+out/
+dist/
+build/
+Videos/
+cc-reel/
+video-scripts/
+
+# Local Dev Scripts & Scratch
+scratch/
+scripts/
+
+# Local Devlog Images
+journal/images/
+
+# Python & AI Models
+__pycache__/
+*.py[cod]
+*$py.class
+*.pt
+*.onnx
+*.bin
+venv/
+.venv/
+env/
+
+# Audio Data & Transcripts (Large test files)
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.opus
+recordings/
+
+# KiCad temporary & auto-backup files
+*.kicad_prb
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*-save.kicad_sch
+*-save.kicad_pcb
+_autosave-*
+*.bak
+*.lck
+*.rpt
+*.tmp
+fp-info-cache
