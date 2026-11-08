@@ -87,3 +87,4 @@ Connecting a FAT32 SD card to a computer while a microcontroller is actively wri
 Before sending files to manufacturing, I ran the design through KiCad's design rules check against JLCPCB's 2-layer production capabilities. All trace widths, clearances, annular rings, and solder mask expansions passed with zero errors and zero unrouted nets.
 
 ![hours15_10_jlcpcb_drc_verification](images/hours15_10_jlcpcb_drc_verification.png)
+

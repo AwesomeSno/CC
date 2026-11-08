@@ -1,0 +1,6 @@
+Hour 15 update on MEMENTO! The hardware and physical enclosure are officially locked in.
+I routed the board as a compact 75 by 42 millimeter 2-layer PCB in KiCad 10.
+To stop switching regulator noise and high-current SD card writes from leaking into the microphone, I carved out an isolated analog ground plane under the INMP441 with an LC filter.
+In OpenSCAD, I modeled the two-piece snap-fit enclosure in matte PETG with an acoustic front port and an integrated spring clip for your shirt pocket.
+On the firmware side, I set up a dual-core FreeRTOS pipeline: Core 1 samples the mic via I2S DMA into a ring buffer at top priority, while Core 0 chunks audio into 15-minute WAV files with zero dropped samples.
+Next up: testing the local Whisper transcription pipeline on my Mac. Stay tuned!

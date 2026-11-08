@@ -174,3 +174,4 @@ uint64_t StorageManager::getFreeSpaceMB() const {
     }
     return 0;
 }
+

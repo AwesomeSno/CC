@@ -1,0 +1,32 @@
+1
+00:00:00,100 --> 00:00:05,562
+Most voice memos on your phone are just dead graveyards of audio that you never listen to again.
+
+2
+00:00:05,512 --> 00:00:11,262
+And cloud recording apps force you to upload your private conversations to someone else's servers.
+
+3
+00:00:11,262 --> 00:00:18,275
+For Hack Club's Half Life, I'm building MEMENTO: an intelligent personal memory and conversation analysis companion.
+
+4
+00:00:18,275 --> 00:00:30,237
+It's a featherweight wearable powered by an ESP32-S3 and an INMP441 digital I2S microphone, recording uncompressed 16-bit audio straight to a 32GB microSD card.
+
+5
+00:00:30,237 --> 00:00:37,862
+It has a physical hardware mute switch for guaranteed privacy, an OLED telemetry screen, and a silent haptic feedback motor.
+
+6
+00:00:37,862 --> 00:00:45,300
+When you plug it into your Mac, local AI transcribes everything, separates speakers, and acts as your personal interview coach.
+
+7
+00:00:45,300 --> 00:00:49,287
+And the entire hardware build costs under sixty dollars.
+
+8
+00:00:49,287 --> 00:00:53,087
+Now, let me walk you through how this all comes together!
+

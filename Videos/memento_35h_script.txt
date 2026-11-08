@@ -1,0 +1,7 @@
+Hour 35 checkpoint on MEMENTO! The desktop intelligence engine is running completely offline on my Mac.
+When you plug the recorder in over USB-C, an automated script verifies the SHA-256 checksum and ingests the audio.
+It runs Faster-Whisper for word-level timestamps and PyAnnote to separate my voice from the other speakers.
+But we went further than plain text: Librosa extracts acoustic pitch, vocal intensity, and hesitation gaps.
+A local Ollama model then reviews the session as an interview coach: it tells you if you dodged a question, if you interrupted, counts your filler words, and pulls out your promises into a daily action list.
+Everything is stored in SQLite with full-text search, linking every single note back to the exact audio second.
+The hardware is done, the AI is 100% local, and the total cost is under 60 dollars!

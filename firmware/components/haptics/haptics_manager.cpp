@@ -50,3 +50,4 @@ void HapticsManager::play(HapticProfile profile) {
             break;
     }
 }
+

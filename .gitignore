@@ -18,16 +18,11 @@ node_modules/
 out/
 dist/
 build/
-Videos/
 cc-reel/
 video-scripts/
 
 # Local Dev Scripts & Scratch
 scratch/
-scripts/
-
-# Local Devlog Images
-journal/images/
 
 # Python & AI Models
 __pycache__/

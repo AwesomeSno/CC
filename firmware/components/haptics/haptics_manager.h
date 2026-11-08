@@ -21,3 +21,4 @@ public:
 private:
     void pulse(uint32_t durationMs, uint8_t dutyPct = 100);
 };
+

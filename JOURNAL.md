@@ -306,3 +306,4 @@ I ran a full 2-hour continuous recording bench test with the physical hardware. 
 Checking against the original requirements for Half Life, MEMENTO hits all its goals: a reliable hardware recorder under the 100 dollar budget, physical privacy controls, high-endurance local storage, and an intelligent desktop companion that turns everyday conversations into structured personal memory.
 
 ![hours35_10_project_completion_matrix](journal/images/hours35_10_project_completion_matrix.png)
+

@@ -36,3 +36,4 @@ private:
     RingbufHandle_t _ringBuffer;
     TaskHandle_t _taskHandle;
 };
+

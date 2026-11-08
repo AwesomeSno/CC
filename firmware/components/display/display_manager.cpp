@@ -55,3 +55,4 @@ void DisplayManager::renderScreen(uint32_t recordSeconds, uint8_t batteryPct, ui
             break;
     }
 }
+

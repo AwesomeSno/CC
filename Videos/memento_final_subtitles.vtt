@@ -1,0 +1,36 @@
+1
+00:00:00,100 --> 00:00:06,850
+This is MEMENTO: an intelligent personal memory and conversation analysis device built for Hack Club's Half Life.
+
+2
+00:00:06,800 --> 00:00:13,025
+Most voice recorders are just digital dustbins: you record hours of audio and never open them again.
+
+3
+00:00:13,025 --> 00:00:15,312
+MEMENTO changes that.
+
+4
+00:00:15,312 --> 00:00:26,950
+It's a wearable clip-on powered by an ESP32-S3 and an INMP441 digital MEMS microphone that records high-fidelity 16kHz audio straight to local microSD storage.
+
+5
+00:00:26,950 --> 00:00:35,112
+It features a physical hardware mute switch that cuts power to the mic capsule, a silent haptic feedback motor, and a glanceable OLED display.
+
+6
+00:00:35,112 --> 00:00:40,137
+When you plug it into your Mac, everything is processed 100% offline.
+
+7
+00:00:40,137 --> 00:00:47,500
+Local Whisper handles transcription, PyAnnote separates speakers, and Librosa analyzes vocal tone and hesitation.
+
+8
+00:00:47,500 --> 00:00:56,250
+Then our local AI acts as your interview coach: highlighting where you dodged questions, tracking promises made, and compiling a daily executive summary.
+
+9
+00:00:56,250 --> 00:01:01,112
+Designed from scratch, fully open source, and built for under 60 dollars.
+

@@ -111,3 +111,4 @@ def search_transcripts(query: str) -> List[Dict[str, Any]]:
     rows = [dict(row) for row in c.fetchall()]
     conn.close()
     return rows
+

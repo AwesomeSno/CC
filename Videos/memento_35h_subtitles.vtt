@@ -1,0 +1,32 @@
+1
+00:00:00,100 --> 00:00:03,137
+Hour 35 checkpoint on MEMENTO!
+
+2
+00:00:03,087 --> 00:00:07,700
+The desktop intelligence engine is running completely offline on my Mac.
+
+3
+00:00:07,700 --> 00:00:15,775
+When you plug the recorder in over USB-C, an automated script verifies the SHA-256 checksum and ingests the audio.
+
+4
+00:00:15,775 --> 00:00:22,187
+It runs Faster-Whisper for word-level timestamps and PyAnnote to separate my voice from the other speakers.
+
+5
+00:00:22,187 --> 00:00:29,387
+But we went further than plain text: Librosa extracts acoustic pitch, vocal intensity, and hesitation gaps.
+
+6
+00:00:29,387 --> 00:00:40,350
+A local Ollama model then reviews the session as an interview coach: it tells you if you dodged a question, if you interrupted, counts your filler words, and pulls out your promises into a daily action list.
+
+7
+00:00:40,350 --> 00:00:46,937
+Everything is stored in SQLite with full-text search, linking every single note back to the exact audio second.
+
+8
+00:00:46,937 --> 00:00:53,437
+The hardware is done, the AI is 100% local, and the total cost is under 60 dollars!
+

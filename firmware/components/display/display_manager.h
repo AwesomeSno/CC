@@ -26,3 +26,4 @@ private:
     bool _isDimmed;
     void renderScreen(uint32_t recordSeconds, uint8_t batteryPct, uint64_t freeStorageMB);
 };
+

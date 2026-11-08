@@ -52,3 +52,4 @@ def detect_speech_pauses(transcript_segments: List[Dict[str, Any]]) -> List[Dict
                 "before_text": transcript_segments[i]["text"]
             })
     return hesitations
+

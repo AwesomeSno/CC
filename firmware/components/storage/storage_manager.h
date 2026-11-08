@@ -46,3 +46,4 @@ private:
     void writeWavHeader(FILE* f, uint32_t dataBytes);
     void saveMetadataJson();
 };
+

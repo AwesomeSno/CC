@@ -1,0 +1,40 @@
+1
+00:00:00,100 --> 00:00:01,837
+Hey everyone!
+
+2
+00:00:01,787 --> 00:00:05,387
+Quick update on MEMENTO for Hack Club's Half Life.
+
+3
+00:00:05,387 --> 00:00:11,162
+I just wrapped up the first 5 hours of planning and architecture, and here is how it is shaping up.
+
+4
+00:00:11,162 --> 00:00:16,325
+Most voice recorders dump gigabytes of audio into a folder you never listen to.
+
+5
+00:00:16,325 --> 00:00:22,437
+MEMENTO is a wearable hardware recorder that turns conversations into structured personal memory.
+
+6
+00:00:22,437 --> 00:00:33,575
+At its core is an ESP32-S3 and an INMP441 I2S digital MEMS microphone recording uncompressed 16-bit audio straight to a 32GB microSD card.
+
+7
+00:00:33,575 --> 00:00:41,125
+For privacy, I designed in a physical hardware slide switch that cuts power directly to the microphone so it cannot record in secret.
+
+8
+00:00:41,125 --> 00:00:49,275
+It syncs with your Mac over USB-C where local AI handles transcription, speaker separation, and interview coaching with zero cloud tracking.
+
+9
+00:00:49,275 --> 00:00:54,850
+Next up: routing the 2-layer PCB in KiCad and modeling the clip-on enclosure.
+
+10
+00:00:54,850 --> 00:00:56,750
+Thanks for watching!
+

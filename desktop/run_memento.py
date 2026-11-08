@@ -147,3 +147,4 @@ if __name__ == "__main__":
     parser.add_argument("--demo", action="store_true", default=True, help="Run on demo interview recording")
     args = parser.parse_args()
     run_pipeline(demo_mode=args.demo)
+

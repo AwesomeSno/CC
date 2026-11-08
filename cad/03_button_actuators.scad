@@ -29,3 +29,4 @@ module mute_switch_knob() {
 translate([0, 0, 0]) tactile_button_cap(); // REC button
 translate([10, 0, 0]) tactile_button_cap(); // MARK button
 translate([22, 0, 2.5]) mute_switch_knob(); // MUTE knob
+

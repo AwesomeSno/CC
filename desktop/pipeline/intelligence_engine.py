@@ -46,3 +46,4 @@ def parse_coaching_response(raw_json_str: str) -> Dict[str, Any]:
         return json.loads(clean.strip())
     except Exception as e:
         return {"error": f"Failed to parse LLM JSON: {e}", "raw": raw_json_str}
+
