@@ -51,3 +51,4 @@ If the microphone captures muffled or noisy audio, no AI model in the world can 
 For battery life, I chose a 1200mAh 3.7V LiPo cell with built-in protection. The board takes 5V over USB-C, charges through a TP4056 linear charger, and feeds an ultra-low-noise ME6211 3.3V LDO regulator. In recording mode with the OLED dimmed, current draw is around 65mA, which gives easily 14 or more hours of continuous recording.
 
 ![initial_05_power_tree_and_battery](images/initial_05_power_tree_and_battery.png)
+

@@ -49,3 +49,4 @@ I modeled the enclosure to be compact and easy to carry, measuring about 75mm ta
 I put together the complete BOM with all components sourced from LCSC, JLCPCB, and standard suppliers. The total hardware parts cost comes out to 32 dollars and 19 cents. Even with shipping, taxes, and a healthy contingency buffer, the entire project sits around 60 dollars, comfortably under the 100 dollar Half Life limit.
 
 ![initial_10_half_life_budget_bom](images/initial_10_half_life_budget_bom.png)
+
